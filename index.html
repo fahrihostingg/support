@@ -12,6 +12,7 @@
             background-color: #2c2c2c; /* Dark background */
             color: #f4f4f4; /* Text color */
             animation: fadeIn 1s; /* Animation */
+            overflow: hidden; /* Hide overflow for rain effect */
         }
 
         @keyframes fadeIn {
@@ -70,17 +71,77 @@
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
+
+        /* Hujan */
+        .rain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none; /* Prevent interaction */
+        }
+
+        .drop {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            width: 2px;
+            height: 10px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10px;
+                opacity: 0.5;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Button Kembali */
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #2c2c2c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e6b800;
+        }
     </style>
     <script>
-        // Fitur back otomatis
+        function goBack() {
+            window.history.back();
+        }
+
+        // Hujan
+        function createRain() {
+            const rainContainer = document.querySelector('.rain');
+            for (let i = 0; i < 100; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'drop';
+                drop.style.left = Math.random() * 100 + 'vw';
+                drop.style.animationDuration = Math.random() * 1 + 0.5 + 's'; // Random fall speed
+                drop.style.opacity = Math.random();
+                rainContainer.appendChild(drop);
+            }
+        }
+
         window.onload = function() {
-            setTimeout(function() {
-                window.history.back();
-            }, 5000); // Kembali setelah 5 detik
+            createRain();
         }
     </script>
 </head>
 <body>
+
+    <div class="rain"></div> <!-- Container untuk efek hujan -->
 
     <div class="contact-info">
         <img src="https://i.supa.codes/wKuIu.png" alt="Gambar Kontak"> <!-- Gambar di atas -->
@@ -88,6 +149,7 @@
         <p>Email: <a href="mailto:fahristoree2808@gmail.com">fahristoree2808@gmail.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/601159754638" target="_blank">nmr WhatsApp</a></p>
         <p>ch: <a href="https://whatsapp.com/channel/0029VahdkpZ6GcGO29mUq51f" target="_blank">ch</a></p>
+        <button class="back-button" onclick="goBack()">Kembali</button> <!-- Tombol Kembali -->
     </div>
 
 </body>
