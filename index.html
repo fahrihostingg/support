@@ -26,6 +26,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             margin: 20px;
             animation: slideIn 1s; /* Animation */
+            text-align: center; /* Center text */
         }
 
         @keyframes slideIn {
@@ -35,7 +36,6 @@
 
         h2 {
             color: #fff; /* White color for heading */
-            text-align: center;
             animation: textGlow 1.5s infinite alternate; /* Text glow animation */
         }
 
@@ -46,7 +46,6 @@
 
         p {
             margin: 10px 0;
-            text-align: center;
         }
 
         a {
@@ -58,6 +57,18 @@
         a:hover {
             color: #ffcc00; /* Change color on hover */
             text-decoration: underline;
+        }
+
+        img {
+            display: block; 
+            margin: 20px auto; /* Center image */
+            animation: bounce 1s infinite; /* Gambar dengan animasi */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
     </style>
     <script>
@@ -72,20 +83,12 @@
 <body>
 
     <div class="contact-info">
+        <img src="https://via.placeholder.com/150" alt="Gambar Kontak"> <!-- Gambar di atas -->
         <h2>Kontak Kami</h2>
         <p>Email: <a href="mailto:fahristoree2808@gmail.com">fahristoree2808@gmail.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/601159754638" target="_blank">nmr WhatsApp</a></p>
         <p>ch: <a href="https://whatsapp.com/channel/0029VahdkpZ6GcGO29mUq51f" target="_blank">ch</a></p>
-        <img src="https://via.placeholder.com/150" alt="Gambar Kontak" style="display: block; margin: 0 auto; animation: bounce 1s infinite;"> <!-- Gambar dengan animasi -->
     </div>
-
-    <style>
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-    </style>
 
 </body>
 </html>
