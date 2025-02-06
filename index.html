@@ -7,38 +7,85 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #2c2c2c; /* Dark background */
+            color: #f4f4f4; /* Text color */
+            animation: fadeIn 1s; /* Animation */
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .contact-info {
-            background: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #8b0000; /* Dark red background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            animation: slideIn 1s; /* Animation */
         }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         h2 {
-            color: #333;
+            color: #fff; /* White color for heading */
+            text-align: center;
+            animation: textGlow 1.5s infinite alternate; /* Text glow animation */
         }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px #fff; }
+            100% { text-shadow: 0 0 20px #ff0000; }
+        }
+
         p {
             margin: 10px 0;
+            text-align: center;
         }
+
         a {
-            color: #007BFF;
+            color: #00ccff; /* Link color */
             text-decoration: none;
+            transition: color 0.3s;
         }
+
         a:hover {
+            color: #ffcc00; /* Change color on hover */
             text-decoration: underline;
         }
     </style>
+    <script>
+        // Fitur back otomatis
+        window.onload = function() {
+            setTimeout(function() {
+                window.history.back();
+            }, 5000); // Kembali setelah 5 detik
+        }
+    </script>
 </head>
 <body>
 
     <div class="contact-info">
         <h2>Kontak Kami</h2>
-        <p>Email: <a href="mailto: fahristoree2808@gmail.com">fahristoree2808@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/601159754638" target="_blank">+60 11-5975 4638</a></p>
+        <p>Email: <a href="mailto:fahristoree2808@gmail.com">fahristoree2808@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/601159754638" target="_blank">nmr WhatsApp</a></p>
+        <p>ch: <a href="https://whatsapp.com/channel/0029VahdkpZ6GcGO29mUq51f" target="_blank">ch</a></p>
+        <img src="https://via.placeholder.com/150" alt="Gambar Kontak" style="display: block; margin: 0 auto; animation: bounce 1s infinite;"> <!-- Gambar dengan animasi -->
     </div>
 
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+
 </body>
-  </html>
+</html>
